@@ -1,0 +1,48 @@
+<html>
+    <body>
+        <script>
+            
+            var defaultColors = "140c1c44243430346d4e4a4e854c30346524d04648757161597dced27d2c8595a16daa2cd2aa996dc2cadad45edeeed6";
+
+            function gen(){
+                var out = ""
+                var elements = document.querySelectorAll("input[type='color']");
+
+                for (var i = 0; i < elements.length; i++) {
+                    out += elements[i].value.substring(1);
+                };
+
+                document.querySelector("textarea").value = out;
+            }
+
+            window.onload = function(){
+                var elements = document.querySelectorAll("input[type='color']");
+
+                for (var i = 0; i < elements.length; i++) {
+                    elements[i].value = "#"+defaultColors.substring(i*6,i*6+6);
+                };
+            }
+
+        </script>
+        <input type="color" onchange="gen();"/>
+        <input type="color" onchange="gen();"/>
+        <input type="color" onchange="gen();"/>
+        <input type="color" onchange="gen();"/>
+        <input type="color" onchange="gen();"/>
+        <input type="color" onchange="gen();"/>
+        <input type="color" onchange="gen();"/>
+        <input type="color" onchange="gen();"/>
+        <br/>
+        <input type="color" onchange="gen();"/>
+        <input type="color" onchange="gen();"/>
+        <input type="color" onchange="gen();"/>
+        <input type="color" onchange="gen();"/>
+        <input type="color" onchange="gen();"/>
+        <input type="color" onchange="gen();"/>
+        <input type="color" onchange="gen();"/>
+        <input type="color" onchange="gen();"/>
+        <br/>
+        <br/>
+        <textarea></textarea>
+    </body>
+</html>
