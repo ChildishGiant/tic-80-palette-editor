@@ -1,7 +1,39 @@
 <!DOCTYPE html>
     <body>
-        <script>
-            
+        <style>
+            html {
+                background: #757161;
+                font-size: .2vw;
+                text-align: center;
+            }
+
+            input[type=color] {
+                width: 55rem;
+                height: 55rem;
+                padding: 0px;
+                border: 3.5rem solid #deeed6;
+            }
+
+            td {
+                padding: 0px;
+            }
+
+            table {
+                border: 3.5rem solid #deeed6;
+                box-shadow: 0px 6rem 0px 0px #140c1c;
+                display:inline-block;
+                margin-bottom: 10rem;
+                border-collapse: collapse;
+                background: #deeed6;
+            }
+
+            textarea {
+                font-size: 15em;
+                width: 445rem;
+                resize: none;
+            }
+        </style>
+        <script>            
             var defaultColors = "140c1c44243430346d4e4a4e854c30346524d04648757161597dced27d2c8595a16daa2cd2aa996dc2cadad45edeeed6";
 
             function gen(){
@@ -24,24 +56,30 @@
             }
 
         </script>
-        <input type="color" onchange="gen();"/>
-        <input type="color" onchange="gen();"/>
-        <input type="color" onchange="gen();"/>
-        <input type="color" onchange="gen();"/>
-        <input type="color" onchange="gen();"/>
-        <input type="color" onchange="gen();"/>
-        <input type="color" onchange="gen();"/>
-        <input type="color" onchange="gen();"/>
-        <br/>
-        <input type="color" onchange="gen();"/>
-        <input type="color" onchange="gen();"/>
-        <input type="color" onchange="gen();"/>
-        <input type="color" onchange="gen();"/>
-        <input type="color" onchange="gen();"/>
-        <input type="color" onchange="gen();"/>
-        <input type="color" onchange="gen();"/>
-        <input type="color" onchange="gen();"/>
-        <br/>
+        <div id="wrapper">
+                <table>
+                    <tr>
+                        <td><input type="color" onchange="gen()"></td>
+                        <td><input type="color" onchange="gen()"></td>
+                        <td><input type="color" onchange="gen()"></td>
+                        <td><input type="color" onchange="gen()"></td>
+                        <td><input type="color" onchange="gen()"></td>
+                        <td><input type="color" onchange="gen()"></td>
+                        <td><input type="color" onchange="gen()"></td>
+                        <td><input type="color" onchange="gen()"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="color" onchange="gen()"></td>
+                        <td><input type="color" onchange="gen()"></td>
+                        <td><input type="color" onchange="gen()"></td>
+                        <td><input type="color" onchange="gen()"></td>
+                        <td><input type="color" onchange="gen()"></td>
+                        <td><input type="color" onchange="gen()"></td>
+                        <td><input type="color" onchange="gen()"></td>
+                        <td><input type="color" onchange="gen()"></td>
+                    </tr>
+                </table>
+        </div>
         <br/>
         <textarea></textarea>
     </body>
