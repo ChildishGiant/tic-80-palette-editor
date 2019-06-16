@@ -1,17 +1,20 @@
 <!DOCTYPE html>
+
     <body>
         <style>
-            html {
+            body {
                 background: #757161;
-                font-size: .2vw;
                 text-align: center;
+                margin: 0;
             }
 
             input[type=color] {
-                width: 55rem;
-                height: 55rem;
+                width: 10.5vw;
+                height: 10.5vw;
                 padding: 0px;
-                border: 3.5rem solid #deeed6;
+                border: 0.75vw solid #deeed6;
+                -webkit-appearance: none;
+                background-color: #deeed6;
             }
 
             td {
@@ -19,68 +22,92 @@
             }
 
             table {
-                border: 3.5rem solid #deeed6;
-                box-shadow: 0px 6rem 0px 0px #140c1c;
-                display:inline-block;
-                margin-bottom: 10rem;
+                box-shadow: 0px 1.5vw 0px 0px #140c1c;
+                border: 0.75vw solid #deeed6;
+                display: inline-block;
+                margin-bottom: 1.5vw;
                 border-collapse: collapse;
                 background: #deeed6;
             }
 
             textarea {
-                font-size: 15em;
-                width: 445rem;
+                font-size: 1.8vw;
+                line-height: 1.8vw;
+                /* font-size: 1.8vw; */
+                text-align: center;
+                width: 97vw;
                 resize: none;
+                font-family: monospace;
+            }
+
+            #wrapper {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
         </style>
-        <script>            
-            var defaultColors = "140c1c44243430346d4e4a4e854c30346524d04648757161597dced27d2c8595a16daa2cd2aa996dc2cadad45edeeed6";
+        <script>
+            var textarea;
+            var elements;
+            var defaultColors =
+                "140c1c44243430346d4e4a4e854c30346524d04648757161597dced27d2c8595a16daa2cd2aa996dc2cadad45edeeed6";
 
-            function gen(){
-                var out = ""
-                var elements = document.querySelectorAll("input[type='color']");
+
+            function gen() {
+                let out = ""
 
                 for (var i = 0; i < elements.length; i++) {
                     out += elements[i].value.substring(1);
                 };
 
-                document.querySelector("textarea").value = out;
+                textarea.value = out;
             }
 
-            window.onload = function(){
-                var elements = document.querySelectorAll("input[type='color']");
-
+            function update() {
                 for (var i = 0; i < elements.length; i++) {
-                    elements[i].value = "#"+defaultColors.substring(i*6,i*6+6);
+                    elements[i].value = "#"+textarea.value.substring(i*6, i*6+6)
                 };
             }
 
+            window.onload = function () {
+
+
+                elements = document.querySelectorAll("input[type='color']");
+
+                for (var i = 0; i < elements.length; i++) {
+                    elements[i].value = "#" + defaultColors.substring(i * 6, i * 6 + 6);
+                };
+
+                textarea = document.querySelector("textarea")
+                textarea.value = defaultColors
+            }
         </script>
         <div id="wrapper">
-                <table>
-                    <tr>
-                        <td><input type="color" onchange="gen()"></td>
-                        <td><input type="color" onchange="gen()"></td>
-                        <td><input type="color" onchange="gen()"></td>
-                        <td><input type="color" onchange="gen()"></td>
-                        <td><input type="color" onchange="gen()"></td>
-                        <td><input type="color" onchange="gen()"></td>
-                        <td><input type="color" onchange="gen()"></td>
-                        <td><input type="color" onchange="gen()"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="color" onchange="gen()"></td>
-                        <td><input type="color" onchange="gen()"></td>
-                        <td><input type="color" onchange="gen()"></td>
-                        <td><input type="color" onchange="gen()"></td>
-                        <td><input type="color" onchange="gen()"></td>
-                        <td><input type="color" onchange="gen()"></td>
-                        <td><input type="color" onchange="gen()"></td>
-                        <td><input type="color" onchange="gen()"></td>
-                    </tr>
-                </table>
+            <table>
+                <tr>
+                    <td><input type="color" onchange="gen()"></td>
+                    <td><input type="color" onchange="gen()"></td>
+                    <td><input type="color" onchange="gen()"></td>
+                    <td><input type="color" onchange="gen()"></td>
+                    <td><input type="color" onchange="gen()"></td>
+                    <td><input type="color" onchange="gen()"></td>
+                    <td><input type="color" onchange="gen()"></td>
+                    <td><input type="color" onchange="gen()"></td>
+                </tr>
+                <tr>
+                    <td><input type="color" onchange="gen()"></td>
+                    <td><input type="color" onchange="gen()"></td>
+                    <td><input type="color" onchange="gen()"></td>
+                    <td><input type="color" onchange="gen()"></td>
+                    <td><input type="color" onchange="gen()"></td>
+                    <td><input type="color" onchange="gen()"></td>
+                    <td><input type="color" onchange="gen()"></td>
+                    <td><input type="color" onchange="gen()"></td>
+                </tr>
+            </table>
+            <br/>
+            <textarea onchange="update()">140c1c44243430346d4e4a4e854c30346524d04648757161597dced27d2c8595a16daa2cd2aa996dc2cadad45edeeed6</textarea>
         </div>
-        <br/>
-        <textarea></textarea>
     </body>
 </html>
