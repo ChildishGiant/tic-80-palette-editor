@@ -2,8 +2,13 @@
 
     <body>
         <style>
+            /* @font-face {
+                font-family: TIC-80;
+                src: url('TIC80.ttf');
+            } */
+
             body {
-                background: #757161;
+                background: #566c86;
                 text-align: center;
                 margin: 0;
             }
@@ -12,9 +17,9 @@
                 width: 10.5vw;
                 height: 10.5vw;
                 padding: 0px;
-                border: 0.75vw solid #deeed6;
+                border: 0.75vw solid #333c57;
                 -webkit-appearance: none;
-                background-color: #deeed6;
+                background-color: #333c57;
             }
 
             td {
@@ -22,12 +27,12 @@
             }
 
             table {
-                box-shadow: 0px 1.5vw 0px 0px #140c1c;
-                border: 0.75vw solid #deeed6;
+                box-shadow: 0px 1.5vw 0px 0px #1a1c2c;
+                border: 0.75vw solid #333c57;
                 display: inline-block;
                 margin-bottom: 1.5vw;
                 border-collapse: collapse;
-                background: #deeed6;
+                background: #333c57;
             }
 
             textarea {
@@ -38,6 +43,7 @@
                 width: 97vw;
                 resize: none;
                 font-family: monospace;
+                text-transform: uppercase;
             }
 
             #wrapper {
@@ -50,7 +56,9 @@
         <script>
             var textarea;
             var elements;
-            var defaultColors =
+            const defaultColors =
+                "1a1c2c5d275db13e53ef7d57ffcd75a7f07038b76425717929366f3b5dc941a6f673eff7f4f4f494b0c2566c86333c57";
+            const old =
                 "140c1c44243430346d4e4a4e854c30346524d04648757161597dced27d2c8595a16daa2cd2aa996dc2cadad45edeeed6";
 
 
